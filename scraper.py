@@ -126,4 +126,6 @@ for ride_detail_full in ride_details_full:
     all_rides_df = all_rides_df.append(pd.DataFrame.from_dict(ride_data))
     
 all_rides_df.to_csv('all_rides.csv', index = False)
+
+browser.quit()
     
