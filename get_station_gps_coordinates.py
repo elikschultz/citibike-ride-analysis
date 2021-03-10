@@ -34,3 +34,4 @@ for station in distinct_stations:
 rides_df['ride_start_gps'] = rides_df['ride_start_location'].apply(lambda x: geocoding_dict.get(x, None))
 rides_df['ride_end_gps'] = rides_df['ride_end_location'].apply(lambda x: geocoding_dict.get(x, None))
 
+rides_df.to_csv('all_rides.csv')
