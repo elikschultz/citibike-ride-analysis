@@ -26,12 +26,15 @@ for station in distinct_stations:
         geocoding_dict[station] = (data['results'][0]['geometry']['location']['lat'], data['results'][0]['geometry']['location']['lng'])
         
         # API only allows 50 calls per second
-        time.sleep(0.03)
+        time.sleep(0.05)
 
     else:
         print('The following station name is not given as an intersection: ', station)
         
-rides_df['ride_start_gps'] = rides_df['ride_start_location'].apply(lambda x: geocoding_dict.get(x, None))
-rides_df['ride_end_gps'] = rides_df['ride_end_location'].apply(lambda x: geocoding_dict.get(x, None))
+rides_df['ride_start_latitude'] = rides_df['ride_start_location'].apply(lambda x: geocoding_dict.get(x, (None, None))[0])
+rides_df['ride_start_longitude'] = rides_df['ride_start_location'].apply(lambda x: geocoding_dict.get(x, (None, None))[1])
+rides_df['ride_end_latitude'] = rides_df['ride_end_location'].apply(lambda x: geocoding_dict.get(x, (None, None))[0])
+rides_df['ride_end_longitude'] = rides_df['ride_end_location'].apply(lambda x: geocoding_dict.get(x, (None, None))[1])
 
-rides_df.to_csv('all_rides.csv')
+
+rides_df.to_csv('all_rides_with_gps.csv')
