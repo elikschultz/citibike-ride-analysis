@@ -6,7 +6,7 @@ The first script to run is `scraper.py`. Since a user has to log in in order to 
 
 - their phone number
 - a verification code that the site sends to their phone
-- enter their email address
+- their email address
 
 Once the user enters their information, `scraper.py` completes its work of getting all of the user's ride history into a csv file.
 
