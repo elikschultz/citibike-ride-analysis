@@ -12,6 +12,6 @@ Once the user enters their information, `scraper.py` completes its work of getti
 
 The next script to run is `get_station_gps_coordinates.py`. This script requires the user to have the Google Geocoding API enabled, and to have their API key saved as an environment variable. API key setup instructions are available [here](https://developers.google.com/maps/documentation/geocoding/start). One caveat here is that only station names that are given as intersections are used, since other station names can confuse the API. Fortunately, the vast majority of Citi Bike station names are given as intersections.
 
-Finally, the `mapper.r` script creates a map that shows a user's rides, with a color gradient to represent route frequency. A sample output is shown below:
+Finally, the `mapper.r` script creates a map that shows a user's rides, with a color gradient to represent route frequency. This script requires the user to have the Google Maps Static API enabled. A sample output is shown below:
 
 ![citibike_ride_map](https://user-images.githubusercontent.com/35080150/110874202-573ea180-82a1-11eb-8d58-9fdccc6feba3.png)
