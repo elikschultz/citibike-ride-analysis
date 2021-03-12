@@ -28,9 +28,9 @@ ggmap(map, extent = 'device') +
                  xend = ride_end_longitude,
                  yend = ride_end_latitude,
                  color = log(total_rides)),
-             size = 0.1,
-             arrow = arrow(length = unit(0.01, "npc"))) +
-  scale_colour_gradient(low = "blue", high = "red") +
+             size = 0.3,
+             arrow = arrow(length = unit(0.015, "npc"))) +
+  scale_colour_gradient(low = "yellow", high = "red") +
   coord_quickmap() +
   guides(color = FALSE)
 
