@@ -21,8 +21,6 @@ phone_number = input('Please enter the phone number associated with your Citi Bi
 browser = webdriver.Chrome()
 browser.get((login_url))
 
-
-
 ### Perform login ###
 
 # Enter and submit phone number
@@ -64,12 +62,17 @@ except:
 
 ### Show all rides and ride details ###
 # Show all rides
+previous_count_of_cards_displayed = 0
 while True:
     try:
         show_more_button_web_element = browser.find_element_by_xpath("//button[@data-testid='DATA_TESTID_SHOW_MORE']")
         try:
-            show_more_button_web_element.click()
-            time.sleep(0.25 + random.random())
+            if previous_count_of_cards_displayed < len(browser.find_elements_by_xpath("//div[@data-testid ='DATA_TESTID_RIDE_OVERVIEW_CARD']")):
+                previous_count_of_cards_displayed = len(browser.find_elements_by_xpath("//div[@data-testid ='DATA_TESTID_RIDE_OVERVIEW_CARD']"))
+                show_more_button_web_element.click()
+                time.sleep(1 + random.random())
+            else: 
+                break
         except:
             time.sleep(5)
             show_more_button_web_element.click()
