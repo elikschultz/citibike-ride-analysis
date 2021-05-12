@@ -14,4 +14,4 @@ The next script to run is `get_station_gps_coordinates.py`. This script requires
 
 Finally, the `mapper.r` script creates a map that shows a user's rides, with a color gradient to represent route frequency. This script requires the user to have the Google Maps Static API enabled. A sample output is shown below:
 
-![citibike_ride_map](https://user-images.githubusercontent.com/35080150/110874202-573ea180-82a1-11eb-8d58-9fdccc6feba3.png)
+![citibike_ride_map](https://user-images.githubusercontent.com/35080150/117905285-f16e9600-b2a0-11eb-86d0-8843b780f983.png)
