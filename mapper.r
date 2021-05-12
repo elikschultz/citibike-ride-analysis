@@ -27,11 +27,13 @@ ggmap(map, extent = 'device') +
                  y = ride_start_latitude,
                  xend = ride_end_longitude,
                  yend = ride_end_latitude,
-                 color = log(total_rides)),
-             size = 0.3,
+                 color = log(total_rides),
+                 alpha = log(total_rides),
+                 size = log(total_rides)),
              arrow = arrow(length = unit(0.015, "npc"))) +
-  scale_colour_gradient(low = "yellow", high = "red") +
-  coord_quickmap() +
-  guides(color = FALSE)
+  scale_colour_gradient(low = "yellow", high = "red", guide = FALSE) +
+  scale_alpha_continuous(range = c(0.8, 1), guide = FALSE) +
+  scale_size_continuous(range=c(0.2, 0.3), guide = FALSE)
+  coord_quickmap()
 
 ggsave('citibike_ride_map.png')
